@@ -14,6 +14,7 @@ cursor = cnxn.cursor()
 
 # record info
 RECORD_COUNT = 1000000 # number of records to mock out
+PRINT_FREQ = RECORD_COUNT // 10
 RESULTS = ["hit", "walk", "out", "strikeout"]
 records = []
 
@@ -39,7 +40,7 @@ tsql = "INSERT INTO Loading.baseball_json(result, temperature, raw_json) values 
 for row in records:
     with cursor.execute(tsql, row["result"], row["temperature"], json.dumps(row)):
         n = row["id"] + 1
-        if n % 100000 == 0:
+        if n % PRINT_FREQ == 0:
             print("inserted {} record(s)".format(n))
 
 # Confirm inserts
