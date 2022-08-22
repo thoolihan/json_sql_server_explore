@@ -7,13 +7,13 @@ import os
 # db info
 SERVER = "localhost"
 DB = "Test"
-USERNAME = "ymmit"
-PASSWORD = os.environ.get("SSPASS") # set on command line for session
+USERNAME = os.environ.get("SSUSER") # set on command line for session, ie: SET SSUSER=myusername
+PASSWORD = os.environ.get("SSPASS") # set on command line for session, ie: SET SSPASS=mypass1234
 cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+SERVER+';DATABASE='+DB+';UID='+USERNAME+';PWD='+ PASSWORD)
 cursor = cnxn.cursor()
 
 # record info
-RECORD_COUNT = 1000000
+RECORD_COUNT = 1000000 # number of records to mock out
 RESULTS = ["hit", "walk", "out", "strikeout"]
 records = []
 
