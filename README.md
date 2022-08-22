@@ -13,7 +13,7 @@ The question arose to the impact of storing data as JSON in SQL server. This is 
 
 Now you can use the following scripts:
 * [json_sample_queries.sql](json_sample_queries.sql) to explore how to query with json
-* [average.sql](average.sql) to compare a column average with json column average
-* [index_test.sql](index_test.sql) to compare filtering a record by a string with a column, vs a json value, including indexing the json value
+* [average.sql](average.sql) to compare a column average with json column average. The timing info will be in the message tab if using SSMS.
+* [index_test.sql](index_test.sql) to compare filtering a record by a string with a column, vs a json value, including indexing the json value. The timing info will be in the message tab if using SSMS.
 
 You can email me with any questions or feedback at tim at hoolihan.net, or open a pull request with suggested changes.
